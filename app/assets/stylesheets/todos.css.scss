@@ -1,0 +1,47 @@
+// Place all the styles related to the todos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.todos {
+  border-collapse: collapse;
+}
+
+table tr td {
+  padding: 5px;
+  vertical-align: top;
+}
+
+.list_todos {
+  width: 85%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+
+  dl {
+    margin: 0;
+  }
+
+  dt {
+    color: #244;
+    font-weight: bold;
+    font-size: larger;
+  }
+
+  dd {
+    margin: 0;
+  }
+
+}
+
+.list_actions {
+  font-size: x-smal;
+  text-align: left;
+  padding-left: 1em;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.list_line_even {
+  background: #eaeaea;
+}
+.list_line_odd {
+  background: #d2d5d5;
+}

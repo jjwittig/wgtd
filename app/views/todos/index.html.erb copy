@@ -1,0 +1,39 @@
+<h1>Listing todos</h1>
+
+<table>
+  <tr>
+    <th>Action</th>
+    <th>Notes</th>
+    <th>Due</th>
+    <th>Project</th>
+    <th>Priority</th>
+    <th>Completed</th>
+    <th>Tags</th>
+    <th>Assigned to</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @todos.each do |todo| %>
+  <tr>
+    <td><%= todo.action %></td>
+    <td><%= todo.notes %></td>
+    <td><%= todo.due %></td>
+    <td><%= todo.project %></td>
+    <td><%= todo.priority %></td>
+    <td><%= todo.completed %></td>
+    <td><%= todo.tags %></td>
+    <td><%= todo.assigned_to %></td>
+    <td><%= todo.status %></td>
+    <td><%= link_to 'Show', todo %></td>
+    <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
+    <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Todo', new_todo_path %>

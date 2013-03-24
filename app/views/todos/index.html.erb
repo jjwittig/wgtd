@@ -1,0 +1,29 @@
+<h1>Wittig GTD</h1>
+
+<table>
+<% @todos.each do |todo| %>
+    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+
+        <td class="list_todos">
+            <dl>
+                <dt><%= link_to todo.action, edit_todo_path(todo) %></dt>
+                <dd><%=todo.due.strftime("%b %d, %Y") %></dd>
+                <dd><%= strip_tags(todo.notes) %></dd>
+                <dd>Project: <%= todo.project %>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Assigned to:<%= todo.assigned_to %></dd>
+            </dl>
+        </td>
+
+        <td class='list_actions'>
+            Project: <%= todo.project %><br/>
+            Assigned to:<%= todo.assigned_to %><br/>
+            Priority:<%= todo.priority %><br/>
+            Completed:<%= todo.completed %><br/>
+            <%= link_to 'Delete', todo, method: :delete, 
+                        data: { confirm: 'Are you sure?'} %>
+        </td>
+    </tr>
+<% end %>
+</table>
+<br />
+
+<%= link_to 'New todo', new_todo_path %>
